@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+
+TIMBRE_LEVEL=':warn' DATAHIKE_STORE_BACKEND=rocksdb DATAHIKE_STORE_CONFIG='{}' clojure -M:test
