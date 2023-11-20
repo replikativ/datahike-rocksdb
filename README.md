@@ -10,30 +10,15 @@
 The goal of this backend is to support [RocksDB](https://rocksdb.org). This implementation is a work in progress.
 
 ## Configuration
-Please read the [Datahike configuration docs](https://github.com/replikativ/datahike/blob/master/doc/config.md) on how to configure your backend. Details about the backend configuration can be found in [konserve-s3](https://github.com/replikativ/konserve-s3).A sample configuration is
+Please read the [Datahike configuration docs](https://github.com/replikativ/datahike/blob/master/doc/config.md) on how to configure your backend. Details about the backend configuration can be found in [konserve-rocksdb](https://github.com/replikativ/konserve-rocksdb).A sample configuration is
 `create-database`, `connect` and `delete-database`:
 ```clojure
-{:store {:backend :s3
-         :bucket "datahike-rocksdb"
-         :store-id "instance1"
-         :region "us-west-1"
-         :access-key "YOUR_ACCESS_KEY"
-         :secret "YOUR_ACCESS_KEY_SECRET"}}
-```
-This same configuration can be achieved by setting one environment variable for the s3 backend
-and one environment variable for the configuration of the s3 backend:
-```bash
-DATAHIKE_STORE_BACKEND=s3
-DATAHIKE_STORE_CONFIG='{:bucket "datahike-rocksdb-instance" ...}'
+{:store {:backend :rocksdb :path "/tmp/datahike-rocksdb-playground"}}
 ```
 
 ## Usage
 Add to your Leiningen or Boot dependencies:
 [![Clojars Project](https://img.shields.io/clojars/v/io.replikativ/datahike-rocksdb.svg)](https://clojars.org/io.replikativ/datahike-rocksdb)
-
-Now require the Datahike API and the datahike-rocksdb namespace in your editor or REPL using the
-keyword `:s3`. If you want to use other backends than S3 please refer to the official
-[Datahike docs](https://github.com/replikativ/datahike/blob/master/doc/config.md).
 
 ### Run Datahike in your REPL
 ```clojure
@@ -41,12 +26,7 @@ keyword `:s3`. If you want to use other backends than S3 please refer to the off
     (:require [datahike.api :as d]
               [datahike-rocksdb.core]))
 
-  (def cfg {:store {:backend :s3
-                    :bucket "datahike-rocksdb"
-                    :store-id "instance1"
-                    :region "us-west-1"
-                    :access-key "YOUR_ACCESS_KEY"
-                    :secret "YOUR_ACCESS_KEY_SECRET"}})
+  (def cfg {:store {:backend :rocksdb :path "/tmp/datahike-rocksdb-playground"}})
 
   ;; Create a database at this place, by default configuration we have a strict
   ;; schema validation and keep historical data
