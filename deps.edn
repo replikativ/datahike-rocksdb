@@ -1,8 +1,6 @@
-{:deps {org.clojure/clojure                         {:mvn/version "1.11.1" :scope "provided"}
-        io.replikativ/datahike                      {;:mvn/version "0.6.1539" :scope "provided"
-                                                     :local/root "/home/christian/Development/datahike"}
-        io.replikativ/konserve-rocksdb              {:git/url "https://github.com/replikativ/konserve-rocksdb"
-                                                     :git/sha "ea994fd7fd0635c81f9a95abe4c85ee801f0c11d"}}
+{:deps {org.clojure/clojure                         {:mvn/version "1.12.0" :scope "provided"}
+        io.replikativ/datahike                      {:mvn/version "0.6.1597" :scope "provided"}
+        io.replikativ/konserve-rocksdb              {:mvn/version "0.2.10"}}
  :paths ["src"]
  :aliases {:test   {:extra-deps  {lambdaisland/kaocha {:mvn/version "1.60.977"}}
                     :extra-paths ["test"]}

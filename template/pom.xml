@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>io.replikativ</groupId>
-    <artifactId>datahike-rocksdb</artifactId>
-    <packaging>jar</packaging>
-    <name>datahike-rocksdb</name>
-     <description>Datahike RocksDB Backend</description>
-    <licenses>
-        <license>
-            <name>Eclipse</name>
-            <url>http://www.eclipse.org/legal/epl-v10.html</url>
-        </license>
-    </licenses>
-    <scm>
-        <connection>scm:git:git@github.com:replikativ/datahike-rocksdb.git</connection>
-        <developerConnection>scm:git:git@github.com/replikativ/datahike-rocksdb.git</developerConnection>
-        <url>https://github.com/replikativ/datahike-rocksdb</url>
-    </scm>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.replikativ</groupId>
+  <artifactId>datahike-rocksdb</artifactId>
+  <packaging>jar</packaging>
+  <name>datahike-rocksdb</name>
+  <description>A RocksDB backend for Datahike</description>
+  <url>https://datahike.io</url>
+  <licenses>
+    <license>
+      <name>Eclipse</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:git:git@github.com:replikativ/datahike-rocksdb.git</connection>
+    <developerConnection>scm:git:git@github.com/replikativ/datahike-rocksdb.git</developerConnection>
+    <url>https://github.com/replikativ/datahike-rocksdb</url>
+  </scm>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+  </build>
+  <repositories>
+    <repository>
+      <id>clojars</id>
+      <url>https://repo.clojars.org/</url>
+    </repository>
+  </repositories>
 </project>

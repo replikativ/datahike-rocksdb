@@ -5,8 +5,6 @@
    [datahike.api :as d]
    [datahike-rocksdb.core]))
 
-
-
 (deftest ^:integration test-rocksdb
   (let [config {:store {:backend :rocksdb
                         :path   "/tmp/datahike-rocksdb-test"
@@ -25,7 +23,7 @@
       (is (= (d/q '[:find ?e :where [?e :name]] @conn)
              #{[3] [2] [1]}))
 
-      (d/release conn)
       (is (d/database-exists? config))
+      #_(d/release conn)
       (d/delete-database config)
       (is (not (d/database-exists? config))))))
